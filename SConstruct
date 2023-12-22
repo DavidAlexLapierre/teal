@@ -1,3 +1,1 @@
-env = Environment()
-
-env.Program('test', 'src/main.cpp')
+SConscript('src/main.scons', variant_dir='./build', duplicate=0)
