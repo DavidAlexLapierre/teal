@@ -2,6 +2,9 @@ env = Environment(
     SCONS_CXX_STANDARD='c++20'
 )
 
+
+env.Append( CPPPATH=['.'])
+
 src_files = Glob('./*.cpp')
 
 env.Program('test', src_files) 

@@ -1,6 +1,8 @@
+#include "test.h"
+
 #include <iostream>
 
 int main() {
-    std::cout << "Hello swag" << std::endl;
+    Amethyst::Test test;
     return 0;
 }
