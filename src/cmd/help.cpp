@@ -5,9 +5,7 @@ namespace Teal {
         "\tinit:\tInitialize the project.\n"
         "\tbuild:\tBuilds the project.\n"
         "\tadd:\tAdds a file to the project.\n" 
-        "\taddcpp:\tAdds a c++ file to the project.\n"
-        "\taddh:\tAdds a header file to the project.\n"
-        "\taddch:\tAdds a c++ & header file to the project.\n"
+        "\taddc:\tAdds a new class to the project.\n"
         "\tclean:\tCleans the project.\n";
 
     void HelpCmd::LogHelp() {
