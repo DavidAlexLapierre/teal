@@ -1,9 +1,25 @@
+import platform
+
+current_os = platform.system()
+os_define = ''
+
 env = Environment(
     SCONS_CXX_STANDARD='c++20'
 )
 
 
 env.Append( CPPPATH=['.'])
+
+# Platform detection
+
+if current_os == 'Windows':
+    os_define = 'WINDOWS'
+elif current_os == 'Linux':
+    os_define = 'LINUX'
+elif current_os == 'Darwin':
+    os_define = 'MACOS'
+
+env.Append(CPPDEFINES = [os_define])
 
 src_files = [
     Glob('./*.cpp'),
