@@ -11,8 +11,9 @@ namespace Teal {
         public:
             CmdParser();
             ~CmdParser();
+            void parse(const char* cmd);
 
         private:
-            std::unique_ptr<std::unordered_map<std::string, Teal::Cmd>> cmds;
+            std::unordered_map<std::string, Teal::Cmd> cmds;
     };
 }

@@ -11,6 +11,8 @@ int main(int argc, char *argv[]) {
 
     auto parser = new Teal::CmdParser();
 
+    parser->parse(argv[1]);
+
     delete parser;
     return 0;
 }
