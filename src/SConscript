@@ -5,6 +5,9 @@ env = Environment(
 
 env.Append( CPPPATH=['.'])
 
-src_files = Glob('./*.cpp')
+src_files = [
+    Glob('./*.cpp'),
+    Glob('./utils/*.cpp')
+]
 
 env.Program('test', src_files) 

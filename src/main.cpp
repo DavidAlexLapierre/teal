@@ -1,6 +1,12 @@
-#include <iostream>
+#include "utils/logger.h"
 
 int main(int argc, char *argv[]) {
-    std::cout << "Hello pewdiepie" << std::endl;
+
+    if (argc < 2) {
+        Teal::Logger::err("Please select a command");
+    } else {
+        Teal::Logger::warn(argv[1]);
+    }
+
     return 0;
 }
