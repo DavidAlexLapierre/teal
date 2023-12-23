@@ -8,11 +8,13 @@ int main(int argc, char *argv[]) {
 
         return -1;
     }
+    
+    Teal::CmdParser parser;
+    if (!parser.run(argv[1], argc, argv)) {
+        Teal::Logger::err("Failed to run command");
+    }
 
-    auto parser = new Teal::CmdParser();
 
-    parser->parse(argv[1]);
 
-    delete parser;
     return 0;
 }

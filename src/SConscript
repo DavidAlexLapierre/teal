@@ -11,4 +11,4 @@ src_files = [
     Glob('./cmd/*.cpp')
 ]
 
-env.Program('test', src_files) 
+env.Program('teal', src_files) 

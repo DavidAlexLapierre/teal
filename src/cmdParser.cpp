@@ -1,24 +1,17 @@
 #include "cmdParser.h"
-#include "cmd/cmd.h"
 #include "cmd/help.h"
-#include "utils/logger.h"
-#include <memory>
 
 namespace Teal {
     CmdParser::CmdParser() {
-        cmds = { 
-            {"help", HelpCmd()}
-        };
+        cmds["help"] = executeHelp;
     }
 
-    CmdParser::~CmdParser() {
-    }
-
-
-    void CmdParser::parse(const char* cmd) {
+    int CmdParser::run(const std::string& cmd, int argc, char *argv[]) {
         auto it = cmds.find(cmd);
         if (it != cmds.end()) {
-            Logger::log("found");
+            it->second(argc, argv);
         }
+
+        return -1;
     }
 }

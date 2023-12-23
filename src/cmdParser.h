@@ -1,19 +1,16 @@
 #pragma once
 
-#include "cmd/cmd.h"
-
-#include <unordered_map>
 #include <string>
-#include <memory>
+#include <unordered_map>
+#include <functional>
 
 namespace Teal {
     class CmdParser {
         public:
             CmdParser();
-            ~CmdParser();
-            void parse(const char* cmd);
+            int run(const std::string& cmd, int argc, char* argv[]);
 
         private:
-            std::unordered_map<std::string, Teal::Cmd> cmds;
+            std::unordered_map<std::string, std::function<void(int, char*[])>> cmds;
     };
 }
