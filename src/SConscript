@@ -8,7 +8,10 @@ env = Environment(
 )
 
 
-env.Append( CPPPATH=['.'])
+env.Append( CPPPATH=[
+    '.',
+    '../
+])
 
 # Platform detection
 
