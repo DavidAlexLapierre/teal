@@ -6,7 +6,13 @@ project(teal)  # Replace "YourProjectName" with the name of your project
 set(CMAKE_CXX_STANDARD 20)
 
 # Add executable target
-add_executable(teal src/main.cpp)  # Replace "main.cpp" with your main source file
+add_executable(teal 
+    src/main.cpp
+    src/cmd/help.cpp
+    src/utils/logger.cpp
+    src/cmdParser.cpp
+)  # Replace "main.cpp" with your main source file
 
-target_include_directories(teal PRIVATE ./src/)
+target_include_directories(teal PRIVATE src)
+target_compile_definitions(teal PRIVATE WINDOWS)
 
