@@ -11,7 +11,7 @@ add_executable(teal
     src/cmd/help.cpp
     src/utils/logger.cpp
     src/cmdParser.cpp
-)  # Replace "main.cpp" with your main source file
+)
 
 target_include_directories(teal PRIVATE src)
 target_compile_definitions(teal PRIVATE WINDOWS)
