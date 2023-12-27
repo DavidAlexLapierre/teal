@@ -6,12 +6,13 @@ namespace Teal {
         cmds["help"] = executeHelp;
     }
 
-    int CmdParser::run(const std::string& cmd, int argc, char *argv[]) {
+    bool CmdParser::run(const std::string& cmd, int argc, char *argv[]) {
         auto it = cmds.find(cmd);
         if (it != cmds.end()) {
             it->second(argc, argv);
+            return 1;
         }
 
-        return -1;
+        return 0;
     }
 }
