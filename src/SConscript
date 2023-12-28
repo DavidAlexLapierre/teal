@@ -1,0 +1,17 @@
+env = Environment(SCONS_CXX_STANDARD='c++20')
+
+src_files = [
+    Glob('./*.cpp'),
+    Glob('./cmd/*.cpp'),
+    Glob('./utils/*.cpp'),
+]
+
+env.Append( CPPPATH=['.'] )
+env.Append( CPPDEFINES=['WINDOWS'] )
+
+# compil_commands.json
+
+env.Tool('compilation_db')
+env.CompilationDatabase()
+
+env.Program('teal', src_files)
