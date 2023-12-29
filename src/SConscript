@@ -1,5 +1,6 @@
 import os
 
+# Getting the different files
 def generate_cpp_paths(folder):
     cpp_paths = []
 
@@ -20,7 +21,7 @@ def generate_cpp_paths(folder):
 
 env = Environment(SCONS_CXX_STANDARD='c++20')
 
-cpp_files = generate_cpp_paths(".")
+cpp_files = generate_cpp_paths("..\\src")
 cpp_files.append(".\\*.cpp")
 
 src_files = []
@@ -28,12 +29,21 @@ src_files = []
 for path in cpp_files:
     src_files.append(Glob(path))
 
-env.Append( CPPPATH=['./framework', './game'] )
+# Build parameters
+env.Append( CPPPATH=[
+        '..\\src',
+        '..\\libs\\includes'
+] )
+
 env.Append( CPPDEFINES=['WINDOWS'] )
+env.Append( LIBPATH=['..\\libs'] )
+env.Append( LIBS=[
+    'glfw3'
+] )
 
-# compil_commands.json
-
+# compile_commands.json for NVIM environment
 env.Tool('compilation_db')
 env.CompilationDatabase()
 
+# build program
 env.Program('teal', src_files)

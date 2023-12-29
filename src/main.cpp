@@ -1,6 +1,8 @@
-#include "framework/utils/logger.h"
+#include "game/test.h"
 
 int main() {
+
+    Teal::Asdfmovie test;
+
     return 0;
-    Teal::Logger::err("Merp");
 }

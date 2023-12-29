@@ -1,0 +1,21 @@
+{
+    "tasks": [
+        {
+            "label": "Build teal",
+            "type": "shell",
+            "command": "scons",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}

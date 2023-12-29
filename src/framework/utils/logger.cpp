@@ -1,8 +1,5 @@
 #include "logger.h"
-
 #include <iostream>
-
-
 
 namespace Teal {
 
