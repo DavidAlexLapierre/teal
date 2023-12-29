@@ -41,6 +41,12 @@ env.Append( LIBS=[
     'glfw3'
 ] )
 
+# Options
+AddOption('--dev', action='store_true')
+
+if (GetOption('dev')):
+    env.Append(CCFLAGS=['-g'])
+
 # compile_commands.json for NVIM environment
 env.Tool('compilation_db')
 env.CompilationDatabase()

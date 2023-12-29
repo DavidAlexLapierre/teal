@@ -1,9 +1,12 @@
 {
     "tasks": [
         {
-            "label": "Build teal",
+            "label": "Build teal debug",
             "type": "shell",
             "command": "scons",
+            "args": [
+                "--dev"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
