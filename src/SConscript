@@ -1,10 +1,35 @@
+import os
+
+def generate_cpp_paths(folder):
+    cpp_paths = []
+
+    def explore_directory(current_path, relative_path=""):
+        nonlocal cpp_paths
+
+        for item in os.listdir(current_path):
+            item_path = os.path.join(current_path, item)
+
+            if os.path.isdir(item_path):
+                new_relative_path = os.path.join(relative_path, item)
+                cpp_paths.append(os.path.join(".", new_relative_path, '*.cpp'))
+                explore_directory(item_path, new_relative_path)
+
+    explore_directory(folder)
+    return cpp_paths
+
+
 env = Environment(SCONS_CXX_STANDARD='c++20')
 
-src_files = [
-    Glob('./*.cpp'),
-    Glob('./cmd/*.cpp'),
-    Glob('./utils/*.cpp'),
-]
+cpp_files = generate_cpp_paths(".")
+cpp_files.append(".\\*.cpp")
+
+src_files = []
+
+for path in cpp_files:
+    src_files.append(Glob(path))
+
+print(src_files)
+
 
 env.Append( CPPPATH=['.'] )
 env.Append( CPPDEFINES=['WINDOWS'] )
