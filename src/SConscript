@@ -28,7 +28,7 @@ src_files = []
 for path in cpp_files:
     src_files.append(Glob(path))
 
-env.Append( CPPPATH=[env.Dir('.')] )
+env.Append( CPPPATH=['./framework', './game'] )
 env.Append( CPPDEFINES=['WINDOWS'] )
 
 # compil_commands.json

@@ -1,16 +1,6 @@
-#include "cmdParser.h"
-#include "utils/logger.h"
+#include "framework/utils/logger.h"
 
-int main(int argc, char *argv[]) {
-    if (argc < 2) {
-        Teal::Logger::err("Please add a command. Use parameter \"help\" to get a list of commands.");
-
-        return -1;
-    }
-    
-    Teal::CmdParser parser;
-    if (!parser.run(argv[1], argc, argv)) {
-        Teal::Logger::err("Failed to run command");
-    }
+int main() {
     return 0;
+    Teal::Logger::err("Merp");
 }
