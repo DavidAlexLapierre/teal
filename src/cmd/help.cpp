@@ -1,4 +1,5 @@
 #include "help.h"
+#include "../utils/logger.h"
 
 namespace Teal {
 #ifdef WINDOWS
