@@ -19,7 +19,7 @@ def generate_cpp_paths(folder):
     return cpp_paths
 
 
-env = Environment(SCONS_CXX_STANDARD='c++20')
+env = Environment(tools=['mingw'], SCONS_CXX_STANDARD='c++20')
 
 cpp_files = generate_cpp_paths("..\\src")
 cpp_files.append(".\\*.cpp")
@@ -41,11 +41,13 @@ env.Append( LIBS=[
     'glfw3'
 ] )
 
-# Options
-AddOption('--dev', action='store_true')
+ccflags = []
 
-if (GetOption('dev')):
-    env.Append(CCFLAGS=['-g'])
+debug = ARGUMENTS.get('debug', 0)
+if int(debug):
+    ccflags.append('-g')
+
+env.Append( CCFLAGS=ccflags)
 
 # compile_commands.json for NVIM environment
 env.Tool('compilation_db')
