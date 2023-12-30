@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Teal {
+namespace Framework::Utils {
     class Logger {
         public:
             static void log(const char* msg);

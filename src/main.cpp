@@ -1,8 +1,9 @@
-#include "game/test.h"
+#include "framework/core/game.h"
 
 int main() {
 
-    Teal::Asdfmovie test;
+    Framework::Core::Game game;
+    game.run();
 
     return 0;
 }
