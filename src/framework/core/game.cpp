@@ -2,7 +2,7 @@
 
 namespace Framework::Core {
     Game::Game() {
-
+        _graphicsDevice = std::make_shared<Graphics::GraphgicDevice>();
     }
 
     Game::~Game() {
