@@ -29,6 +29,9 @@ src_files = []
 for path in cpp_files:
     src_files.append(Glob(path))
 
+# Adding glad.c
+src_files.append('..\\src\\glad.c')
+
 # Build parameters
 env.Append( CPPPATH=[
         '..\\src',
@@ -38,7 +41,11 @@ env.Append( CPPPATH=[
 env.Append( CPPDEFINES=['WINDOWS'] )
 env.Append( LIBPATH=['..\\libs'] )
 env.Append( LIBS=[
-    'glfw3'
+    'glfw3',
+    'opengl32',
+    'User32',
+    'Gdi32',
+    'Shell32'
 ] )
 
 ccflags = []
