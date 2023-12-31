@@ -1,6 +1,6 @@
 #pragma once
 
-#include "framework/graphics/graphicDevice.h"
+#include "displayManager.h"
 
 #include <memory>
 
@@ -12,6 +12,6 @@ namespace FW::Core {
             void run();
         
         private:
-            std::shared_ptr<Graphics::GraphgicDevice> _graphicsDevice;
+            std::shared_ptr<DisplayManager> _displayManager;
     };
 }
