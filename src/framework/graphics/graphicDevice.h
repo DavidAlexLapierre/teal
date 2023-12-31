@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Framework::Graphics {
+namespace FW::Graphics {
     class GraphgicDevice {
         public:
             GraphgicDevice();

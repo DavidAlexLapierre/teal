@@ -4,7 +4,7 @@
 
 #include <memory>
 
-namespace Framework::Core {
+namespace FW::Core {
     class Game {
         public:
             Game();

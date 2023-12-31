@@ -1,6 +1,6 @@
 #include "graphicDevice.h"
 
-namespace Framework::Graphics {
+namespace FW::Graphics {
     GraphgicDevice::GraphgicDevice() {
         
     }

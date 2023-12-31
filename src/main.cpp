@@ -2,7 +2,7 @@
 
 int main() {
 
-    Framework::Core::Game *game = new Framework::Core::Game();
+    FW::Core::Game *game = new FW::Core::Game();
     game->run();
 
     delete game;

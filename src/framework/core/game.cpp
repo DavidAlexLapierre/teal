@@ -1,6 +1,6 @@
 #include "game.h"
 
-namespace Framework::Core {
+namespace FW::Core {
     Game::Game() {
         _graphicsDevice = std::make_shared<Graphics::GraphgicDevice>();
     }
