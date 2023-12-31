@@ -1,6 +1,7 @@
 #pragma once
 
-#include "displayManager.h"
+#include "managers/displayManager.h"
+#include "managers/sceneManager.h"
 
 #include <memory>
 
@@ -13,5 +14,6 @@ namespace FW::Core {
         
         private:
             std::shared_ptr<DisplayManager> _displayManager;
+            std::shared_ptr<SceneManager> _sceneManager;
     };
 }

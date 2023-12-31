@@ -7,6 +7,7 @@ namespace FW::Core {
         _displayManager = std::make_shared<DisplayManager>(
             std::make_shared<Graphics::GraphicDevice>()
         );
+        _sceneManager = std::make_shared<SceneManager>();
     }
 
     Game::~Game() {
