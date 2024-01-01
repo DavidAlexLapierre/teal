@@ -1,4 +1,8 @@
+#!/usr/bin/env python
+
 import os
+
+Import("env")
 
 # Getting the different files
 def generate_cpp_paths(folder):
@@ -13,16 +17,15 @@ def generate_cpp_paths(folder):
             if os.path.isdir(item_path):
                 new_relative_path = os.path.join(relative_path, item)
                 cpp_paths.append(os.path.join(".", new_relative_path, '*.cpp'))
+                cpp_paths.append(os.path.join(".", new_relative_path, '*.c'))
                 explore_directory(item_path, new_relative_path)
 
     explore_directory(folder)
     return cpp_paths
 
-
-env = Environment(tools=['mingw'], SCONS_CXX_STANDARD='c++20')
-
 cpp_files = generate_cpp_paths("..\\src")
 cpp_files.append(".\\*.cpp")
+cpp_files.append(".\\*.c")
 
 src_files = []
 
@@ -30,31 +33,10 @@ for path in cpp_files:
     src_files.append(Glob(path))
 
 # Adding glad.c
-src_files.append('..\\src\\glad.c')
-
-# Build parameters
-env.Append( CPPPATH=[
-        '..\\src',
-        '..\\libs\\includes'
-] )
-
-env.Append( CPPDEFINES=['WINDOWS'] )
-env.Append( LIBPATH=['..\\libs'] )
-env.Append( LIBS=[
-    'glfw3',
-    'opengl32',
-    'User32',
-    'Gdi32',
-    'Shell32'
-] )
-
-ccflags = []
-
-debug = ARGUMENTS.get('debug', 0)
-if int(debug):
-    ccflags.append('-g')
-
-env.Append( CCFLAGS=ccflags)
+# src_files.append('..\\src\\glad.c')
+    
+for item in src_files:
+    print (item)
 
 # compile_commands.json for NVIM environment
 env.Tool('compilation_db')
