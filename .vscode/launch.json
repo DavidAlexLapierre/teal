@@ -4,7 +4,7 @@
             "name": "Debug MSVC",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/teal.exe",
+            "program": "${workspaceFolder}/build/debug/teal.exe",
             "args": [],
             "stopAtEntry": false,
             "externalConsole": false,
