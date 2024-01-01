@@ -2,6 +2,12 @@
 
 env = Environment(tools=['mingw'], SCONS_CXX_STANDARD='c++20')
 
+# Options
+
+opts = Variables(['custom.py'], ARGUMENTS)
+opts.Add(BoolVariable("release", "Release version of the project", False))
+opts.Update(env)
+
 # Build parameters
 env.Append( CPPPATH=[
         '..\\src',
@@ -20,8 +26,7 @@ env.Append( LIBS=[
 
 ccflags = []
 
-debug = ARGUMENTS.get('debug', 0)
-if int(debug):
+if not env["release"]:
     ccflags.append('-g')
 
 env.Append( CCFLAGS=ccflags)

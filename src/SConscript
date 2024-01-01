@@ -31,13 +31,7 @@ src_files = []
 
 for path in cpp_files:
     src_files.append(Glob(path))
-
-# Adding glad.c
-# src_files.append('..\\src\\glad.c')
     
-for item in src_files:
-    print (item)
-
 # compile_commands.json for NVIM environment
 env.Tool('compilation_db')
 env.CompilationDatabase()
