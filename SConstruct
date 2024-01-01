@@ -4,18 +4,16 @@ env = Environment(tools=['mingw'], SCONS_CXX_STANDARD='c++20')
 
 # Options
 
-opts = Variables(['custom.py'], ARGUMENTS)
-opts.Add(BoolVariable("release", "Release version of the project", False))
-opts.Update(env)
+AddOption('--release', dest='release', action='store_true')
 
 # Build parameters
 env.Append( CPPPATH=[
-        '..\\src',
-        '..\\libs\\includes'
+        env.Dir('src'),
+        env.Dir('libs\\includes')
 ] )
 
 env.Append( CPPDEFINES=['WINDOWS'] )
-env.Append( LIBPATH=['..\\libs'] )
+env.Append( LIBPATH=[env.Dir('libs')] )
 env.Append( LIBS=[
     'glfw3',
     'opengl32',
@@ -26,11 +24,15 @@ env.Append( LIBS=[
 
 ccflags = []
 
-if not env["release"]:
+if not GetOption('release'):
     ccflags.append('-g')
 
 env.Append( CCFLAGS=ccflags)
 
 Export("env")
 
-SConscript('src/SConscript', variant_dir='build', duplicate=0)
+outDir = 'debug'
+if GetOption('release'):
+    outDir = 'release'
+
+SConscript('src/SConscript', variant_dir='build/'+outDir, duplicate=0)

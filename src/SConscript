@@ -31,7 +31,7 @@ src_files = []
 
 for path in cpp_files:
     src_files.append(Glob(path))
-    
+
 # compile_commands.json for NVIM environment
 env.Tool('compilation_db')
 env.CompilationDatabase()
