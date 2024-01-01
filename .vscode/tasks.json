@@ -5,7 +5,7 @@
             "type": "shell",
             "command": "scons",
             "args": [
-                "--release"
+                "-Q"
             ],
             "group": {
                 "kind": "build",

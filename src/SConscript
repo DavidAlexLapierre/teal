@@ -23,7 +23,7 @@ def generate_cpp_paths(folder):
     explore_directory(folder)
     return cpp_paths
 
-cpp_files = generate_cpp_paths("..\\src")
+cpp_files = generate_cpp_paths(".")
 cpp_files.append(".\\*.cpp")
 cpp_files.append(".\\*.c")
 
