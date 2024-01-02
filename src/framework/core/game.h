@@ -5,7 +5,7 @@
 
 #include <memory>
 
-namespace FW {
+namespace Teal {
     class Game {
         public:
             Game();

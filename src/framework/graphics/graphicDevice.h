@@ -1,6 +1,6 @@
 #pragma once
 
-namespace FW {
+namespace Teal {
     class GraphicDevice {
         public:
             GraphicDevice();

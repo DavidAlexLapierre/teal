@@ -2,7 +2,7 @@
 
 #include <GLFW/glfw3.h>
 
-namespace FW {
+namespace Teal {
     Game::Game() {
         _displayManager = std::make_shared<DisplayManager>(
             std::make_shared<GraphicDevice>()

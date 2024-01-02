@@ -1,6 +1,6 @@
 #include "sceneManager.h"
 
-namespace FW {
+namespace Teal {
     SceneManager::SceneManager() {
 
     }

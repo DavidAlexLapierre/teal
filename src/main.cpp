@@ -2,7 +2,7 @@
 
 int main() {
 
-    FW::Game *game = new FW::Game();
+    Teal::Game *game = new Teal::Game();
     game->run();
 
     delete game;

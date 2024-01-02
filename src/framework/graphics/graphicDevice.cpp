@@ -1,6 +1,6 @@
 #include "graphicDevice.h"
 
-namespace FW {
+namespace Teal {
     GraphicDevice::GraphicDevice() {
         
     }

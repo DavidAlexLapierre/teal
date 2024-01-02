@@ -7,7 +7,7 @@
 #include <memory>
 #include <glm/glm.hpp>
 
-namespace FW {
+namespace Teal {
     /// @brief Manager responsible for handling the game window
     class DisplayManager {
         public:

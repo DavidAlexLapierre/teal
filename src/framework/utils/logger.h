@@ -1,6 +1,6 @@
 #pragma once
 
-namespace FW {
+namespace Teal {
     class Logger {
         public:
             static void log(const char* msg);

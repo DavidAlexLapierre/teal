@@ -1,6 +1,6 @@
 #pragma once
 
-namespace FW {
+namespace Teal {
     class SceneManager {
         public:
             SceneManager();
