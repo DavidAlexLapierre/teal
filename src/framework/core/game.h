@@ -9,10 +9,12 @@
 namespace Teal {
     class Game : public IDisposable {
         public:
+            /// @brief Constructor for the game object
             Game();
-            ~Game();
+            /// @brief Starts the game loop
             void run();
-            void dispose();
+            /// @brief Terminate the game
+            void dispose() override;
 
         private:
             std::shared_ptr<DisplayManager> _displayManager;

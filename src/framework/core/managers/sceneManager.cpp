@@ -5,10 +5,6 @@ namespace Teal {
         _currentScene = nullptr;
     }
 
-    SceneManager::~SceneManager() {
-        
-    }
-
     void SceneManager::update(double deltaT) {
 
     }

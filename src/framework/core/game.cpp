@@ -10,10 +10,6 @@ namespace Teal {
         _sceneManager = std::make_shared<SceneManager>();
     }
 
-    Game::~Game() {
-
-    }
-
     void Game::run() {
         while (!glfwWindowShouldClose(_displayManager->getWindow())) {
             glClear(GL_COLOR_BUFFER_BIT);

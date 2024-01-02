@@ -13,8 +13,6 @@ namespace Teal {
         public:
             /// @brief Constructor for the SceneManager
             SceneManager();
-            /// @brief Destructor fo the SceneManager
-            ~SceneManager();
             /// @brief Update loop for the current scene
             /// @param deltaT
             void update(double deltaT);
