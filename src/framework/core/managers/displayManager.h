@@ -8,6 +8,7 @@
 #include <glm/glm.hpp>
 
 namespace FW::Core {
+    /// @brief Manager responsible for handling the game window
     class DisplayManager {
         public:
             /// @brief Manager responsible for handling the window
