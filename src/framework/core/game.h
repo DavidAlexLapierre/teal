@@ -1,8 +1,8 @@
 #pragma once
 
 #include "framework/interfaces/IDisposable.h"
-#include "displayManager.h"
-#include "sceneManager.h"
+#include "framework/managers/sceneManager.h"
+#include "framework/managers/displayManager.h"
 
 #include <memory>
 
