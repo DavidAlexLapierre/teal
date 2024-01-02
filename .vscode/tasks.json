@@ -28,8 +28,7 @@
                 "--arch=x86"
             ],
             "group": {
-                "kind": "build",
-                "isDefault": true
+                "kind": "build"
             },
             "presentation": {
                 "reveal": "always",
