@@ -3,7 +3,7 @@
 namespace FW::Core {
     DisplayManager::DisplayManager(std::shared_ptr<Graphics::GraphicDevice> graphicsDevice) {
         _graphicsDevice = graphicsDevice;
-        viewport = glm::vec2(640, 480);
+        viewport = glm::vec2(1280, 720);
         initWindow();
     }
 
