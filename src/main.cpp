@@ -1,8 +1,9 @@
-#include "framework/core/game.h"
+#include "game/core/game.h"
 
 int main() {
 
-    Teal::Game *game = new Teal::Game();
+    Game::Game *game = new Game::Game();
+    game->init();
     game->run();
 
     delete game;

@@ -15,8 +15,12 @@ namespace Teal {
             void run();
             /// @brief Terminate the game
             void dispose() override;
+            /// @brief Initialize the game and its classes
+            void init();
 
-        private:
+        protected:
+            /// @brief Function used to register the different scenes
+            virtual void initScenes() = 0;
             std::shared_ptr<DisplayManager> _displayManager;
             std::shared_ptr<SceneManager> _sceneManager;
     };
