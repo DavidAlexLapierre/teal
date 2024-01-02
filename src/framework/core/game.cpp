@@ -2,10 +2,10 @@
 
 #include <GLFW/glfw3.h>
 
-namespace FW::Core {
+namespace FW {
     Game::Game() {
         _displayManager = std::make_shared<DisplayManager>(
-            std::make_shared<Graphics::GraphicDevice>()
+            std::make_shared<GraphicDevice>()
         );
         _sceneManager = std::make_shared<SceneManager>();
     }

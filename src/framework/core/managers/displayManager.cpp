@@ -1,7 +1,7 @@
 #include "displayManager.h"
 
-namespace FW::Core {
-    DisplayManager::DisplayManager(std::shared_ptr<Graphics::GraphicDevice> graphicsDevice) {
+namespace FW {
+    DisplayManager::DisplayManager(std::shared_ptr<GraphicDevice> graphicsDevice) {
         _graphicsDevice = graphicsDevice;
         viewport = glm::vec2(1280, 720);
         initWindow();

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace FW::Core {
+namespace FW {
     class SceneManager {
         public:
             SceneManager();

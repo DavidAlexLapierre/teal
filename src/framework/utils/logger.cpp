@@ -1,7 +1,7 @@
 #include "logger.h"
 #include <iostream>
 
-namespace Framework::Utils {
+namespace FW {
 
     const char* Logger::ERROR_COLOR = "\033[1;31m";
     const char* Logger::WARN_COLOR = "\033[1;33m";

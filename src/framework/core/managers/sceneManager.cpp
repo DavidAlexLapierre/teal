@@ -1,6 +1,6 @@
 #include "sceneManager.h"
 
-namespace FW::Core {
+namespace FW {
     SceneManager::SceneManager() {
 
     }

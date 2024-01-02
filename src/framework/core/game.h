@@ -5,7 +5,7 @@
 
 #include <memory>
 
-namespace FW::Core {
+namespace FW {
     class Game {
         public:
             Game();

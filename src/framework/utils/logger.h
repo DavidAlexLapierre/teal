@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Framework::Utils {
+namespace FW {
     class Logger {
         public:
             static void log(const char* msg);

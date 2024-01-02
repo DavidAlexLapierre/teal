@@ -1,6 +1,6 @@
 #pragma once
 
-namespace FW::Graphics {
+namespace FW {
     class GraphicDevice {
         public:
             GraphicDevice();
