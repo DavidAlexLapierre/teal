@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 
-env = Environment(tools=['mingw'], SCONS_CXX_STANDARD='c++20')
+import platform
 
 # Options
-
 AddOption('--release', dest='release', action='store_true')
+AddOption('--arch', dest='arch', type='choice', choices=['x64', 'x86'], default='x64', nargs=1, action='store')
+
+# Configuration
+arch = GetOption('arch')
+env = Environment(tools=['mingw'], SCONS_CXX_STANDARD='c++20', TARGET_ARCH=arch)
 
 # Build parameters
 env.Append( CPPPATH=[
@@ -35,4 +39,5 @@ outDir = 'debug'
 if GetOption('release'):
     outDir = 'release'
 
-SConscript('src/SConscript', variant_dir='build/'+outDir, duplicate=0)
+
+SConscript('src/SConscript', variant_dir='build/'+outDir+'/'+arch, duplicate=0)
