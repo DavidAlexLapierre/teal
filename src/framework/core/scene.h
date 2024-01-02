@@ -1,10 +1,12 @@
 #pragma once
 
+#include "framework/interfaces/IDisposable.h"
 
 namespace Teal {
-    class Scene {
+    class Scene : public IDisposable {
         public:
             void init();
             void reset();
+            void dispose() override;
     };
 }

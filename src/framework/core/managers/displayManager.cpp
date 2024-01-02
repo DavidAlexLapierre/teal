@@ -23,20 +23,20 @@ namespace Teal {
         window = glfwCreateWindow(viewport.x, viewport.y, "Teal", NULL, NULL);
 
         if (!window) {
-            terminate();
+            dispose();
             return 0;
         }
 
         GLFWmonitor* monitor = glfwGetPrimaryMonitor();
 
         if (!monitor) {
-            terminate();
+            dispose();
             return 0;
         }
 
         const GLFWvidmode* mode = glfwGetVideoMode(monitor);
         if (!mode) {
-            terminate();
+            dispose();
             return 0;
         }
 
@@ -51,13 +51,10 @@ namespace Teal {
         return 1;
     }
 
-    void DisplayManager::terminate() {
+    void DisplayManager::dispose() {
         if (window) {
             glfwDestroyWindow(window);
         }
         glfwTerminate();
-    }
-
-    DisplayManager::~DisplayManager() {
     }
 }

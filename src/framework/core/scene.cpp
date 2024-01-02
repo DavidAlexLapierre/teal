@@ -8,4 +8,8 @@ namespace Teal {
     void Scene::reset() {
         
     }
+
+    void Scene::dispose() {
+        
+    }
 }

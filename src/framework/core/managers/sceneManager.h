@@ -1,13 +1,15 @@
 #pragma once
 
 #include "framework/core/scene.h"
+#include "framework/interfaces/IDisposable.h"
+
 #include <memory>
 #include <unordered_map>
 #include <typeindex>
 
 namespace Teal {
     /// @brief Object used to manage the different scenes and their interactions.
-    class SceneManager {
+    class SceneManager : public IDisposable {
         public:
             /// @brief Constructor for the SceneManager
             SceneManager();
@@ -30,6 +32,7 @@ namespace Teal {
                     setScene<T>();
                 }
             }
+            void dispose() override;
 
             /// @brief Set the current scene
             /// @tparam T Scene type to set

@@ -16,4 +16,8 @@ namespace Teal {
     void SceneManager::draw() {
 
     }
+
+    void SceneManager::dispose() {
+        
+    }
 }
