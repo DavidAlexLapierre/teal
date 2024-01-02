@@ -8,5 +8,7 @@ namespace Teal {
             void init();
             void reset();
             void dispose() override;
+            void update(double detlaT);
+            void draw();
     };
 }

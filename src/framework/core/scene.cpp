@@ -12,4 +12,12 @@ namespace Teal {
     void Scene::dispose() {
         
     }
+
+    void Scene::update(double deltaT) {
+
+    }
+
+    void Scene::draw() {
+        
+    }
 }
