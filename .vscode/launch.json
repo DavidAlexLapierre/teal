@@ -10,7 +10,7 @@
             "externalConsole": false,
             "cwd": "${workspaceFolder}/build",
             "environment": [],
-            "preLaunchTask": "build",
+            "preLaunchTask": "build debug x64",
             "MIMode": "gdb"
         }
     ]
