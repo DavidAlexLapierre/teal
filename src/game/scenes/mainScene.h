@@ -4,5 +4,7 @@
 
 namespace Game {
     class MainScene : public Teal::Scene {
+        public:
+            void init() override;
     };
 }
