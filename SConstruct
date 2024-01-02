@@ -9,6 +9,7 @@ AddOption('--arch', dest='arch', type='choice', choices=['x64', 'x86'], default=
 # Configuration
 arch = GetOption('arch')
 env = Environment(tools=['mingw'], SCONS_CXX_STANDARD='c++20', TARGET_ARCH=arch)
+platform = platform.system()
 
 # Build parameters
 env.Append( CPPPATH=[
@@ -16,7 +17,18 @@ env.Append( CPPPATH=[
         env.Dir('libs\\includes')
 ] )
 
-env.Append( CPPDEFINES=['WINDOWS'] )
+# Defines
+
+defines = []
+
+if platform == 'Windows':
+    defines.append('WINDOWS')
+elif platform == 'Linux':
+    defines.append('LINUX')
+elif platform == 'Darwin':
+    defines.append('MACOS')
+
+env.Append( CPPDEFINES=defines )
 env.Append( LIBPATH=[env.Dir('libs')] )
 env.Append( LIBS=[
     'glfw3',
