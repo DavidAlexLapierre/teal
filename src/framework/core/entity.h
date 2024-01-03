@@ -2,6 +2,7 @@
 
 #include "component.h"
 #include "framework/interfaces/IDisposable.h"
+#include "framework/interfaces/ITransform.h"
 #include "framework/data/uuid.h"
 
 #include <memory>
@@ -9,7 +10,7 @@
 #include <typeindex>
 
 namespace Teal {
-    class Entity : public IDisposable {
+    class Entity : public IDisposable, ITransform {
         public:
             Entity();
             /// @brief Gets the ID of the entity
