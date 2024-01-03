@@ -18,7 +18,7 @@ namespace Teal {
                 return _id.toString();
             }
             /// @brief Dispose of the entity and its references
-            void dispose() = 0;
+            void dispose();
             /// @brief Update function for the entity
             /// @param deltaT Time between each game fraem
             virtual void update(double deltaT) {}
