@@ -1,13 +1,11 @@
 #include "scene.h"
 
 namespace Teal {
-
-    void Scene::reset() {
-        
-    }
-
+    
     void Scene::dispose() {
-        
+        for (auto it : _entities) {
+            it.second->dispose();
+        }
     }
 
     void Scene::update(double deltaT) {

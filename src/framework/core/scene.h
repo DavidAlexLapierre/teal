@@ -13,7 +13,6 @@ namespace Teal {
     class Scene : public IDisposable {
         public:
             virtual void init() = 0;
-            void reset();
             void dispose() override;
             void update(double detlaT);
             void draw();

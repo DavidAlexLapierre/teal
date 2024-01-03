@@ -38,7 +38,7 @@ namespace Teal {
             void setScene() {
                 std::type_index key = typeid(T);
                 if (_scenes.find(key) != _scenes.end()) {
-                    if (_currentScene != nullptr) _currentScene->reset();
+                    if (_currentScene != nullptr) _currentScene->dispose();
                     _currentScene = _scenes[key];
                     _currentScene->init();
                 }
