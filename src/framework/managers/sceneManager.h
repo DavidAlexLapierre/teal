@@ -43,7 +43,14 @@ namespace Teal {
                     _currentScene->init();
                 }
             }
-        
+
+            /// @brief Register an entity to the current scene
+            /// @param entity Entity to create
+            void createEntity(std::shared_ptr<Entity> entity);
+            /// @brief Delete an entity from the current scene
+            /// @param id ID of the entity
+            void deleteEntity(UUID id);
+
         private:
             std::shared_ptr<Scene> _currentScene;
             std::unordered_map<std::type_index, std::shared_ptr<Scene>> _scenes;

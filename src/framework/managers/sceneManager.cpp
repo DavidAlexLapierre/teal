@@ -17,6 +17,18 @@ namespace Teal {
         }
     }
 
+    void SceneManager::createEntity(std::shared_ptr<Entity> entity) {
+        if (_currentScene != nullptr) {
+            _currentScene->createEntity(entity);
+        }
+    }
+
+    void SceneManager::deleteEntity(UUID id) {
+        if (id.toString() != "" && _currentScene != nullptr) {
+            _currentScene->deleteEntity(id);
+        }
+    }
+
     void SceneManager::dispose() {
         
     }

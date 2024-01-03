@@ -3,11 +3,13 @@
 #include <GLFW/glfw3.h>
 
 namespace Teal {
+
+    std::shared_ptr<DisplayManager> Game::_displayManager = std::make_shared<DisplayManager>(
+        std::make_shared<GraphicDevice>());
+
+    std::shared_ptr<SceneManager> Game::_sceneManager = std::make_shared<SceneManager>();
+
     Game::Game() {
-        _displayManager = std::make_shared<DisplayManager>(
-            std::make_shared<GraphicDevice>()
-        );
-        _sceneManager = std::make_shared<SceneManager>();
     }
 
     void Game::init() {
