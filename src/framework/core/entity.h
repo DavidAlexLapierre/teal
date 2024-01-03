@@ -14,11 +14,16 @@ namespace Teal {
             Entity();
             /// @brief Gets the ID of the entity
             /// @return ID of the entity
-            UUID id() const {
-                return _id;
+            std::string id() const {
+                return _id.toString();
             }
             /// @brief Dispose of the entity and its references
             void dispose() = 0;
+            /// @brief Update function for the entity
+            /// @param deltaT Time between each game fraem
+            virtual void update(double deltaT) {}
+            /// @brief Draw function for the entity
+            virtual void draw() {}
 
         protected:
             UUID _id;
