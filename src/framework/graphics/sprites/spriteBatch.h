@@ -16,7 +16,7 @@ namespace Teal {
 
         private:
             /// @brief Batcher responsible to queue sprites to the GPU
-            SpriteBatcher _spriteBatcher;
+            SpriteBatcher _batcher;
             /// @brief Reference to the graphics device used by the project
             std::shared_ptr<GraphicsDevice> _graphicDevice;
     };
