@@ -3,12 +3,15 @@
 #include "framework/data/color.h"
 
 #include <glm/glm.hpp>
+#include <memory>
 
 namespace Teal {
     /// @brief Object representing a vertex of a mesh
     class Vertex {
         public:
             /// @brief Default constructor of the vertex
+            Vertex();
+            /// @brief Constructor of the vertex with a position
             /// @param position Position of the vertex
             Vertex(glm::vec3 position);
             /// @brief Constructor for a vertex with a color
@@ -25,21 +28,10 @@ namespace Teal {
             /// @param texCoords Texture coordinates of the vertex
             Vertex(glm::vec3 position, Color color, glm::vec2 texCoords);
             /// @brief Color of the vertex
-            /// @return Color object of the vertex
-            Color color() const;
+            std::shared_ptr<Color> color;
             /// @brief Position of the vertex
-            /// @return Position as vector 3
-            glm::vec3 position() const;
+            std::shared_ptr<glm::vec3> position;
             /// @brief Texture coordinates of the vertex
-            /// @return Texture coordinates as vector 2
-            glm::vec2 texCoords() const;
-
-        private:
-            /// @brief Color of the vertex
-            Color _color;
-            /// @brief Position of the vertex
-            glm::vec3 _position;
-            /// @brief Texture coordinates of the vertex
-            glm::vec2 _texCoords;
+            std::shared_ptr<glm::vec2> texCoords;
     };
 }
