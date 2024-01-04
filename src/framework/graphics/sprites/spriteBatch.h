@@ -1,17 +1,20 @@
 #pragma once
 
-#include "graphicsDevice.h"
+#include "spriteBatcher.h"
+#include "framework/graphics/graphicsDevice.h"
 
 #include <memory>
 
 namespace Teal {
-    class SpriteBatcher {
+    class SpriteBatch {
         public:
             /// @brief Constructor of the sprite batcher
             /// @param graphicsDevice Reference to the graphics device used by the project
-            SpriteBatcher(std::shared_ptr<GraphicsDevice> graphicsDevice);
+            SpriteBatch(std::shared_ptr<GraphicsDevice> graphicsDevice);
 
         private:
+            /// @brief Batcher responsible to queue sprites to the gpu
+            SpriteBatcher _spriteBatcher;
             /// @brief Reference to the graphics device used by the project
             std::shared_ptr<GraphicsDevice> _graphicDevice;
     };
