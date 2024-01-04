@@ -2,7 +2,7 @@
 
 namespace Teal {
     Entity::Entity() {
-
+        
     }
 
     void Entity::dispose() {

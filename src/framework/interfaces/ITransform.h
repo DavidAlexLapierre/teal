@@ -18,6 +18,17 @@ namespace Teal {
             /// @brief Scale values
             /// @return Scale as vector 3
             glm::vec3 scale() const;
+            /// @brief Set the position of the entity
+            /// @param x X position
+            /// @param y Y position
+            void setPosition(float x, float y);
+            /// @brief Move the entity
+            /// @param x X translation value
+            /// @param y Y translation value
+            void move(float x, float y);
+            /// @brief Set the depth of the entity
+            /// @param z Depth value
+            void setDepth(float depth);
             /// @brief Set the scale of the entity
             /// @param scale Scale value where 1 is the default
             void setScale(float scale);
@@ -50,8 +61,11 @@ namespace Teal {
             void rotate(float pitch, float yaw, float roll);
 
         protected:
+            /// @brief Position of the entity
             glm::vec3 _position;
+            /// @brief Rotation in radians of the entity
             glm::vec3 _rotation;
+            /// @brief Scale of the entity
             glm::vec3 _scale;
     };
 }

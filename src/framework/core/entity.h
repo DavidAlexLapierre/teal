@@ -10,7 +10,7 @@
 #include <typeindex>
 
 namespace Teal {
-    class Entity : public IDisposable, ITransform {
+    class Entity : public IDisposable, public ITransform {
         public:
             Entity();
             /// @brief Gets the ID of the entity

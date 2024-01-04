@@ -9,6 +9,10 @@ namespace Teal {
 
     std::shared_ptr<SceneManager> Game::_sceneManager = std::make_shared<SceneManager>();
 
+    std::shared_ptr<SceneManager> Game::sceneManager() {
+        return _sceneManager;
+    }
+
     Game::Game() {
     }
 

@@ -15,6 +15,20 @@ namespace Teal {
         return _scale;
     }
 
+    void ITransform::setPosition(float x, float y) {
+        _position.x = x;
+        _position.y = y;
+    }
+
+    void ITransform::move(float x, float y) {
+        _position.x += x;
+        _position.y += y;
+    }
+
+    void ITransform::setDepth(float depth) {
+        _position.z = depth;
+    }
+
     void ITransform::setScale(float scale) {
         _scale = glm::vec3(scale);
     }

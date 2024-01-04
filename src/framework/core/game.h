@@ -17,6 +17,8 @@ namespace Teal {
             void dispose() override;
             /// @brief Initialize the game and its classes
             void init();
+            /// @brief Get the instance of the scene manager
+            /// @return SceneManager used by the project
             static std::shared_ptr<SceneManager> sceneManager();
 
         protected:

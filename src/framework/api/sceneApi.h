@@ -2,7 +2,7 @@
 
 #include "framework/core/game.h"
 #include "framework/data/uuid.h"
-#include "framework/utils/logger.h"
+#include <iostream>
 
 namespace Teal {
     /// @brief Helper function used to create an entity
@@ -11,8 +11,8 @@ namespace Teal {
     /// @param entity Entity to create
     void createEntity(int x, int y, std::shared_ptr<Entity> entity) {
         if (entity != nullptr) {
-            // Update the entity position
-            Logger::log("Merp");
+            entity->setPosition(x, y);
+            Game::sceneManager()->createEntity(entity);
         }
     }
 
@@ -20,7 +20,7 @@ namespace Teal {
     /// @param id ID of the entity
     void deleteEntity(UUID id) {
         if (id.toString() != "") {
-            Logger::log("Deleting entity");
+            Game::sceneManager()->deleteEntity(id);
         }
     }
 }
