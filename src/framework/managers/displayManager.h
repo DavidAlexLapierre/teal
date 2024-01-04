@@ -1,6 +1,6 @@
 #pragma once
 
-#include "framework/graphics/graphicDevice.h"
+#include "framework/graphics/graphicsDevice.h"
 #include "framework/interfaces/IDisposable.h"
 
 #include <glad/glad.h>
@@ -14,7 +14,7 @@ namespace Teal {
         public:
             /// @brief Manager responsible for handling the window
             /// @param graphicsDevice Graphics device object holding graphics card information
-            DisplayManager(std::shared_ptr<GraphicDevice> graphicsDevice);
+            DisplayManager(std::shared_ptr<GraphicsDevice> graphicsDevice);
             /// @brief Get the reference to the GLFWwindow object
             /// @return GLFWwindow reference
             GLFWwindow *getWindow() const;
@@ -30,7 +30,7 @@ namespace Teal {
             /// @brief GLFWwindow reference
             GLFWwindow *window;
             /// @brief Reference to the graphics device
-            std::shared_ptr<GraphicDevice> _graphicsDevice;
+            std::shared_ptr<GraphicsDevice> _graphicsDevice;
             /// @brief Viewport dimensions of the window
             glm::vec2 viewport;
     };

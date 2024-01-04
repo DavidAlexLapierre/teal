@@ -1,7 +1,7 @@
 #include "displayManager.h"
 
 namespace Teal {
-    DisplayManager::DisplayManager(std::shared_ptr<GraphicDevice> graphicsDevice) {
+    DisplayManager::DisplayManager(std::shared_ptr<GraphicsDevice> graphicsDevice) {
         _graphicsDevice = graphicsDevice;
         viewport = glm::vec2(1280, 720);
         initWindow();
