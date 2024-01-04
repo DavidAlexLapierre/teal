@@ -15,6 +15,26 @@ namespace Teal {
         return _scale;
     }
 
+    void ITransform::setScale(float scale) {
+        _scale = glm::vec3(scale);
+    }
+
+    void ITransform::setScale(float scaleX, float scaleY, float scaleZ) {
+        _scale = glm::vec3(scaleX, scaleY, scaleZ);
+    }
+
+    void ITransform::increaseScale(float scale) {
+        _scale.x += scale;
+        _scale.y += scale;
+        _scale.z += scale;
+    }
+
+    void ITransform::increaseScale(float scaleX, float scaleY, float scaleZ) {
+        _scale.x += scaleX;
+        _scale.y += scaleY;
+        _scale.z += scaleZ;
+    }
+
     void ITransform::rotatePitch(float pitch) {
         _rotation.x += degToRad(pitch);
     }

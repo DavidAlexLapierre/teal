@@ -5,6 +5,10 @@
 namespace Teal {
     class ITransform {
         public:
+            /// @brief Constructor for the ITransform interface
+            ITransform() {
+                _scale = glm::vec3(1);
+            }
             /// @brief Position values
             /// @return Position as a vector 3
             glm::vec3 position() const;
@@ -14,6 +18,22 @@ namespace Teal {
             /// @brief Scale values
             /// @return Scale as vector 3
             glm::vec3 scale() const;
+            /// @brief Set the scale of the entity
+            /// @param scale Scale value where 1 is the default
+            void setScale(float scale);
+            /// @brief Set the scale of the entity
+            /// @param scaleX X scale value where 1 is the default
+            /// @param scaleY Y scale value where 1 is the default
+            /// @param scaleZ Z scale value where 1 is the default
+            void setScale(float scaleX, float scaleY, float scaleZ);
+            /// @brief Increase the scale of the entity
+            /// @param scale Scale value to icrease by
+            void increaseScale(float scale);
+            /// @brief Increase the scale of the entity
+            /// @param scaleX X scale to increase by
+            /// @param scaleY Y scale to increase by
+            /// @param scaleZ Z scale to increase by
+            void increaseScale(float scaleX, float scaleY, float scaleZ);
             /// @brief Modify the pitch value
             /// @param pitch Angle in degrees to rotate X axis
             void rotatePitch(float pitch);
