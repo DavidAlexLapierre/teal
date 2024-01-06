@@ -1,7 +1,8 @@
 #include "spriteBatcher.h"
 
 namespace Teal {
-    SpriteBatcher::SpriteBatcher() {
+    SpriteBatcher::SpriteBatcher(std::shared_ptr<GraphicsDevice> graphicsDevice) {
+        _graphicsDevice = graphicsDevice;
         items = new BatchItem[initialBatchSize];
     }
 
