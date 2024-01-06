@@ -17,9 +17,9 @@ namespace Teal {
         }
     }
 
-    void SceneManager::createEntity(std::shared_ptr<Entity> entity) {
+    void SceneManager::createEntity(int x, int y, std::shared_ptr<Entity> entity) {
         if (_currentScene != nullptr) {
-            _currentScene->createEntity(entity);
+            _currentScene->createEntity(x, y, entity);
         }
     }
 

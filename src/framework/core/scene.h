@@ -16,7 +16,7 @@ namespace Teal {
             void dispose() override;
             void update(double detlaT);
             void draw();
-            void createEntity(std::shared_ptr<Entity> entity);
+            void createEntity(int x, int y, std::shared_ptr<Entity> entity);
             void deleteEntity(UUID id);
 
         private:

@@ -21,7 +21,8 @@ namespace Teal {
         }
     }
 
-    void Scene::createEntity(std::shared_ptr<Entity> entity) {
+    void Scene::createEntity(int x, int y, std::shared_ptr<Entity> entity) {
+        entity->setPosition(x, y);
         toCreateEntities.push_back(entity);
     }
 

@@ -4,7 +4,7 @@
 #include "framework/data/uuid.h"
 #include <iostream>
 
-namespace Teal {
+namespace Teal::Api {
     /// @brief Helper function used to create an entity
     /// @param x X position within the scene
     /// @param y Y position within the scene
@@ -12,7 +12,7 @@ namespace Teal {
     void createEntity(int x, int y, std::shared_ptr<Entity> entity) {
         if (entity != nullptr) {
             entity->setPosition(x, y);
-            Game::sceneManager()->createEntity(entity);
+            Game::sceneManager()->createEntity(x, y, entity);
         }
     }
 

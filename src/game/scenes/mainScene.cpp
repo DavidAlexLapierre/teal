@@ -1,10 +1,12 @@
 #include "mainScene.h"
 
-#include "framework/api/sceneApi.h"
+#include "framework/api/entityApi.h"
 #include "game/entities/testEntity.h"
+
+using namespace Teal::Api;
 
 namespace Game {
     void MainScene::init() {
-        Teal::createEntity(0, 0, std::make_shared<TestEntity>());
+        createEntity(0, 0, std::make_shared<TestEntity>());
     }
 }

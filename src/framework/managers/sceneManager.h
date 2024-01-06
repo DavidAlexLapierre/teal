@@ -46,7 +46,7 @@ namespace Teal {
 
             /// @brief Register an entity to the current scene
             /// @param entity Entity to create
-            void createEntity(std::shared_ptr<Entity> entity);
+            void createEntity(int x, int y, std::shared_ptr<Entity> entity);
             /// @brief Delete an entity from the current scene
             /// @param id ID of the entity
             void deleteEntity(UUID id);
