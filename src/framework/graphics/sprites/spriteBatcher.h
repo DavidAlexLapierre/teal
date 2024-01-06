@@ -9,6 +9,7 @@ namespace Teal {
         public:
             /// @brief Constructor for the SpriteBatcher
             SpriteBatcher();
+            /// @brief Destructor for the SpriteBatcher
             ~SpriteBatcher();
             /// @brief Helper function to create a batch item
             /// @return New batch item
