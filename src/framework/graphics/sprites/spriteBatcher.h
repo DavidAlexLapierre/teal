@@ -24,5 +24,9 @@ namespace Teal {
             std::shared_ptr<GraphicsDevice> _graphicsDevice;
             int batchItemCount;
             BatchItem *items;
+            /// @brief Make sure the batch can handle the amount of sprites
+            /// @param size Batch size
+            void ensureArrayCapacity(int size);
+            short *index;
     };
 }
