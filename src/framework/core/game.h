@@ -3,6 +3,7 @@
 #include "framework/interfaces/IDisposable.h"
 #include "framework/managers/sceneManager.h"
 #include "framework/managers/displayManager.h"
+#include "framework/graphics/renderer.h"
 
 #include <memory>
 
@@ -20,11 +21,18 @@ namespace Teal {
             /// @brief Get the instance of the scene manager
             /// @return SceneManager used by the project
             static std::shared_ptr<SceneManager> sceneManager();
+            /// @brief Get the instance of the renderer
+            /// @return Renderer used by the project
+            static std::shared_ptr<Renderer> renderer();
 
         protected:
             /// @brief Function used to register the different scenes
             virtual void initScenes() = 0;
+            /// @brief Display manager for the project
             static std::shared_ptr<DisplayManager> _displayManager;
+            /// @brief Scene manager for the project
             static std::shared_ptr<SceneManager> _sceneManager;
+            /// @brief Renderer for the project
+            static std::shared_ptr<Renderer> _renderer;
     };
 }

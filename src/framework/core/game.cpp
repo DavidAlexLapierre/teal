@@ -4,13 +4,14 @@
 
 namespace Teal {
 
-    std::shared_ptr<DisplayManager> Game::_displayManager = std::make_shared<DisplayManager>(
-        std::make_shared<GraphicsDevice>());
-
+    std::shared_ptr<DisplayManager> Game::_displayManager = std::make_shared<DisplayManager>(std::make_shared<GraphicsDevice>());
     std::shared_ptr<SceneManager> Game::_sceneManager = std::make_shared<SceneManager>();
-
     std::shared_ptr<SceneManager> Game::sceneManager() {
         return _sceneManager;
+    }
+    std::shared_ptr<Renderer> Game::_renderer = std::make_shared<Renderer>();
+    std::shared_ptr<Renderer> Game::renderer() {
+        return _renderer;
     }
 
     Game::Game() {
