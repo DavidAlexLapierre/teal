@@ -27,7 +27,9 @@ namespace Teal {
             virtual void draw() {}
 
         protected:
+            /// @brief Id of the entity
             UUID _id;
+            /// @brief Component map
             std::unordered_map<std::type_index, std::shared_ptr<Component>> _components;
     };
 }
