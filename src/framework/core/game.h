@@ -28,6 +28,8 @@ namespace Teal {
         protected:
             /// @brief Function used to register the different scenes
             virtual void initScenes() = 0;
+            /// @brief Graphics device for the project
+            static std::shared_ptr<GraphicsDevice> _graphicsDevice;
             /// @brief Display manager for the project
             static std::shared_ptr<DisplayManager> _displayManager;
             /// @brief Scene manager for the project
