@@ -1,7 +1,5 @@
 #include "scene.h"
 
-#include <iostream>
-
 namespace Teal {
     
     void Scene::dispose() {
