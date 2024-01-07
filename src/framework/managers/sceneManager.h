@@ -14,7 +14,7 @@ namespace Teal {
             /// @brief Constructor for the SceneManager
             SceneManager();
             /// @brief Update loop for the current scene
-            /// @param deltaT
+            /// @param deltaT Time between each frame in seconds
             void update(double deltaT);
             /// @brief Draw loop for the current scene
             void draw();

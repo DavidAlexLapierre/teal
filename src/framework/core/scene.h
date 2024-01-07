@@ -14,7 +14,10 @@ namespace Teal {
         public:
             virtual void init() = 0;
             void dispose() override;
+            /// @brief Update function for the project
+            /// @param detlaT Time between frames in seconds
             void update(double detlaT);
+            /// @brief Draw function for the project
             void draw();
             void createEntity(int x, int y, std::shared_ptr<Entity> entity);
             void deleteEntity(UUID id);

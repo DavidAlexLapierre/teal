@@ -21,7 +21,7 @@ namespace Teal {
             /// @brief Dispose of the entity and its references
             void dispose();
             /// @brief Update function for the entity
-            /// @param deltaT Time between each game fraem
+            /// @param deltaT Time between each frame in seconds
             virtual void update(double deltaT) {}
             /// @brief Draw function for the entity
             virtual void draw() {}

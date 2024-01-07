@@ -22,11 +22,14 @@ namespace Teal {
     }
 
     void Game::run() {
+        auto lastTime = glfwGetTime();
         while (!glfwWindowShouldClose(_displayManager->getWindow())) {
             glClear(GL_COLOR_BUFFER_BIT);
-
-            _sceneManager->update(0);
+            auto currentTime = glfwGetTime();
+            auto deltaT = currentTime - lastTime;
+            _sceneManager->update(deltaT);
             _sceneManager->draw();
+            lastTime = currentTime;
 
             glfwSwapBuffers(_displayManager->getWindow());
             glfwPollEvents();
