@@ -7,6 +7,7 @@
 #include <glm/glm.hpp>
 
 namespace Teal {
+    /// @brief Sprite component
     class Sprite : public Component {
         public:
             /// @brief Constructor for the sprite
