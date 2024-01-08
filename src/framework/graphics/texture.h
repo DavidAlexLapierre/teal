@@ -15,6 +15,10 @@ namespace Teal {
             unsigned char data() const;
 
         private:
+            const int RGBA_CHANNELS = 4;
+            int *_width;
+            int *_height;
+            int *_channels;
             unsigned char *_data;
     };
 }
