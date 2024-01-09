@@ -1,7 +1,8 @@
 #include "sprite.h"
 
 namespace Teal {
-    Sprite::Sprite(Rectangle *frames, float animationSpeed) {
+    Sprite::Sprite(std::shared_ptr<Texture> texture, Rectangle *frames, float animationSpeed) {
+        _texture = texture;
         _frames = frames;
         _animationSpeed = animationSpeed;
     }

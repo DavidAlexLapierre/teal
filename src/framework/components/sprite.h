@@ -3,8 +3,10 @@
 #include "framework/core/component.h"
 #include "framework/data/rectangle.h"
 #include "framework/data/color.h"
+#include "framework/graphics/texture.h"
 
 #include <glm/glm.hpp>
+#include <memory>
 
 namespace Teal {
     /// @brief Sprite component
@@ -13,7 +15,7 @@ namespace Teal {
             /// @brief Constructor for the sprite
             /// @param frames Frames for the sprite
             /// @param animationSpeed Animation speed of the sprite
-            Sprite(Rectangle *frames, float animationSpeed);
+            Sprite(std::shared_ptr<Texture> texture, Rectangle *frames, float animationSpeed);
             /// @brief Destructor for the sprite
             ~Sprite();
             /// @brief Get the animation speed for the sprite
@@ -32,5 +34,7 @@ namespace Teal {
             float _animationSpeed;
             /// @brief Different frames for the sprite
             Rectangle *_frames;
+            /// @brief Texture reference used by the sprite
+            std::shared_ptr<Texture> _texture;
     };
 }
